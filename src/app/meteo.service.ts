@@ -19,6 +19,13 @@ export class MeteoService {
   async getMeteo() {
     const pos = await this._geoService.getPosition();
     const meteoData = await this._apiServie.getCurrentWeather(pos);
-    this.meteoData = meteoData;
+    return {
+      temp: meteoData.main.temp,
+      temp_min: meteoData.main.temp_min,
+      temp_max: meteoData.main.temp_max,
+      humidity: meteoData.main.humidity,
+      name: meteoData.name,
+      imageUrl: `http://openweathermap.org/img/wn/${meteoData.weather[0].icon}@2x.png` 
+    };
   }
 }

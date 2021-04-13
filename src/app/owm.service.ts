@@ -6,15 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OWMService {
 
-  apiKey: string = '';
-  url: string =  '';
+  appId: string = 'e69064d639a2a2cd2f257cb59c476c6c';
+  url: string =  'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(
     private _http: HttpClient
   ) {}
 
-  async getCurrentWeather(data: {lat:number, long: number}): Promise<any> {
-    const response = await this._http.get(this.url).toPromise();
+  async getCurrentWeather(data: {lat: number, long: number}): Promise<any> {
+    const queryParams = `?lat=${data.lat}&lon=${data.long}&appid=${this.appId}&units=metric`
+    const response = await this._http.get(this.url + queryParams).toPromise();
     return response;
   }
 }
