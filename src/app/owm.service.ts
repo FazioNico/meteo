@@ -13,7 +13,7 @@ export class OWMService {
     private _http: HttpClient
   ) {}
 
-  async getCurrentWeather(): Promise<any> {
+  async getCurrentWeather(data: {lat:number, long: number}): Promise<any> {
     const response = await this._http.get(this.url).toPromise();
     return response;
   }
