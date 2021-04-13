@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { IonicModule } from '@ionic/angular';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot()
   ],
   providers: [],
