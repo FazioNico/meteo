@@ -1,0 +1,13 @@
+{
+  "appId": "ch.nicolasfazio.meteo21",
+  "appName": "Meteo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/Meteo",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
